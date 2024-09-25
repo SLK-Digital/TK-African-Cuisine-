@@ -1,0 +1,431 @@
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TK African Cuisine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FAF3E3; /* Light beige background */
+            color: #333; /* Darker text for readability */
+        }
+
+        /* Splash Screen */
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #333; /* Dark background for contrast */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            text-align: center;
+        }
+        .logo {
+            width: 200px; /* Adjust logo size */
+            height: auto;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #8B4513; /* Rich brown for earthy tones */
+            padding: 10px 25px;
+            position: fixed;
+            width: 100%;
+            height: auto;
+            top: 0;
+            z-index: 999;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: #FFF8DC; /* Lighter text for contrast */
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .navbar ul li a:hover {
+            color: #FFD700; /* Golden hover effect */
+        }
+
+        /* Home Section */
+        .home-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 80px;
+            background-color: #FAF3E3; /* Light beige background */
+            text-align: center;
+        }
+        .home-logo {
+            width: 300px;
+            height: auto;
+        }
+        .content h1 {
+            font-size: 2.5em;
+            color: #8B4513; /* Dark brown for headings */
+            margin-top: 20px;
+        }
+        .menu-ribbon {
+            background-color: #8B4513;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .menu-ribbon:hover {
+            background-color: #FFD700;
+            color: #8B4513;
+        }
+
+        /* Menu Section */
+        .menu-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #FFF8DC;
+        }
+        .menu-section h2 {
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            color: #8B4513; /* Dark brown */
+        }
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .menu-category {
+            background-color: #F4A460; /* Sandy brown background for categories */
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .menu-category:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+        }
+        .menu-category h3 {
+            font-size: 1.8em;
+            color: #8B4513; /* Dark brown for category titles */
+            margin-bottom: 15px;
+        }
+        .menu-item {
+            display: none; /* Hidden by default */
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .menu-item h4 {
+            font-size: 1.4em;
+            color: #8B4513; /* Dark brown */
+            margin: 0;
+        }
+        .menu-item p {
+            font-size: 0.9em;
+            color: #333; /* Dark gray */
+            margin: 5px 0;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #8B4513;
+            color: #FFF8DC;
+        }
+        .about-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .about-section p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #F4A460;
+        }
+        .contact-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #8B4513;
+        }
+        .contact-section p {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .menu-item {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Splash Screen -->
+    <div class="splash-screen" id="splash-screen">
+        <div class="logo-container">
+            <img src="Image 2024-09-24 at 11.15.32_194e11f6.jpg" alt="Restaurant Logo" class="logo">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="content">
+            <img src="Image 2024-09-24 at 11.15.32_194e11f6.jpg" alt="Restaurant Logo" class="home-logo">
+            <h1>Welcome to Our Restaurant</h1>
+            <p>Location: 109 Mandela Drive</p>
+            <p>Hours: Monday - Saturday, 09:00 AM - 18:00 PM</p>
+            <p>Sunday, 09:00 AM - 17:00 PM</p>
+        </div>
+        <a href="#menu" class="menu-ribbon">View Menu</a>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <h2>Our Menu</h2>
+        <div class="menu-container">
+
+            <!-- Most Popular -->
+            <div class="menu-category collapsible">
+                <h3>Most Popular</h3>
+                <div class="menu-item">
+                    <h4>Beef Stew</h4>
+                    <p>A heart warming stew made with aromatic spices served with sides of your choice.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Beef Trotters</h4>
+                    <p>Traditionally well cooked.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Beef Mogodu (Tripe)</h4>
+                    <p>A traditional dish featuring tender tripe.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Hardbody Chicken</h4>
+                    <p>Succulent chicken served with traditional sides.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Skop (Cow Head) </h4>
+                    <p>Deliciously tender beef head cooked to perfection.</p>
+                </div>
+            </div>
+
+            <!-- Plates -->
+            <div class="menu-category collapsible">
+                <h3>Plates</h3>
+                <div class="menu-item">
+                    <h4>Sheep Mogodu</h4>
+                    <p>Served with pap, dumpling, or samp and one veg.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Beef Mogodu</h4>
+                    <p>Served with pap, dumpling, or samp and one veg.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Skop</h4>
+                    <p>Served with pap, dumpling, or samp and one veg.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Hardbody Chicken</h4>
+                    <p>Served with pap, dumpling, or samp and one veg.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Beef Trotters</h4>
+                    <p>Served with pap, dumpling, or samp and one veg.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Braai Meat 300g</h4>
+                    <p>Served with pap, dumpling, or samp and one veg.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Chicken Malana</h4>
+                    <p>Served with pap, dumpling, or samp and one veg.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Beef Stew</h4>
+                    <p>Served with pap, dumpling, or samp and one veg.</p>
+                </div>
+                <div class="menu-item">
+                    <h4>Chicken Feet</h4>
+                    <p>Served with pap, dumpling, or samp and one veg.</p>
+                </div>
+            </div>
+
+            <!-- Bush Meat -->
+            <div class="menu-category collapsible">
+                <h3>Bush Meat</h3>
+                <div class="menu-item">
+                    <h4>Crocodile Meat</h4>
+                </div>
+                <div class="menu-item">
+                    <h4>Kudu</h4> 
+                </div>
+                <div class="menu-item">
+                    <h4>Impala</h4>     
+                </div>
+                <div class="menu-item">
+                    <h4>Giraffe</h4>
+                </div>
+            </div>
+            <!-- Meat Only -->
+            <div class="menu-category collapsible">
+                <h3>Meat Only</h3>
+                <div class="menu-item">
+                    <h4>Beef Mogodu (Tripe)</h4>
+                </div>
+                <div class="menu-item">
+                    <h4>Sheep Mogodu (Tripe)</h4>
+                </div>
+                <div class="menu-item">
+                    <h4>Beef Trotters</h4>
+                </div>
+                <div class="menu-item">
+                    <h4>Skop</h4>
+                </div>
+                <div class="menu-item">
+                    <h4>Beef Stew</h4>
+                </div>
+                <div class="menu-item">
+                    <h4>Chicken Feet</h4>
+                </div>
+                <div class="menu-item">
+                    <h4>Chicken Malana</h4>
+                </div>
+                <div class="menu-item">
+                    <h4>Hardbody Chicken</h4>
+                </div>
+            </div>
+
+            <!-- Sides / Veg -->
+            <!-- Sides / Veg -->
+<div class="menu-category collapsible">
+    <h3>Sides / Veg</h3>
+    <div class="menu-item">
+        <h4>Chips</h4>
+    </div>
+    <div class="menu-item">
+        <h4>Pap</h4>
+    </div>
+    <div class="menu-item">
+        <h4>Mabele Pap</h4>
+    </div>
+    <div class="menu-item">
+        <h4>Dumpling</h4>
+    </div>
+    <div class="menu-item">
+        <h4>Salsa</h4>
+    </div>
+    <div class="menu-item">
+        <h4>Chakalaka</h4>
+    </div>
+    <div class="menu-item">
+        <h4>Spinach</h4>
+    </div>
+    <div class="menu-item">
+        <h4>Cabbage</h4>
+    </div>
+</div>
+
+
+            <!-- Beverages -->
+            <div class="menu-category collapsible">
+                <h3>Beverages</h3>
+                <div class="menu-item">
+                    <h4>Soft Drinks</h4>
+                </div>
+                <div class="menu-item">
+                    <h4>Water</h4>
+                </div>
+                <div class="menu-item">
+                    <h4>!COMING SOON! Alcohol</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>We offer a wide variety of traditional African dishes in a cozy, welcoming environment. Join us for an unforgettable dining experience!</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Email: khozatebello306@gmail.com</p>
+        <p>Phone: 072 611 2932</p>
+    </section>
+
+    <script>
+        // Splash Screen Fade-out Effect
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('splash-screen').style.opacity = '0';
+                document.getElementById('splash-screen').style.transition = 'opacity 1s ease-out';
+                setTimeout(function() {
+                    document.getElementById('splash-screen').style.display = 'none';
+                }, 1000);
+            }, 2000);
+        });
+
+        // Collapsible menu functionality
+        const collapsibleHeaders = document.querySelectorAll('.collapsible');
+
+        collapsibleHeaders.forEach(header => {
+            header.addEventListener('click', function() {
+                const items = this.querySelectorAll('.menu-item');
+                items.forEach(item => {
+                    item.style.display = item.style.display === 'block' ? 'none' : 'block';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
